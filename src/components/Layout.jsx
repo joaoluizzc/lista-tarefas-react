@@ -1,6 +1,6 @@
 import { NavLink, Outlet } from 'react-router';
 
-function Layout() {
+function Layout({ autenticado, onSair }) {
   return (
     <>
       <nav className="navbar navbar-expand navbar-dark bg-primary">
@@ -10,6 +10,13 @@ function Layout() {
             <NavLink className="nav-link" to="/" end>Início</NavLink>
             <NavLink className="nav-link" to="/tarefas">Tarefas</NavLink>
             <NavLink className="nav-link" to="/sobre">Sobre</NavLink>
+            {autenticado ? (
+              <button className="btn btn-outline-light ms-2" onClick={onSair}>
+                Sair
+              </button>
+            ) : (
+              <NavLink className="nav-link" to="/login">Login</NavLink>
+            )}
           </div>
         </div>
       </nav>

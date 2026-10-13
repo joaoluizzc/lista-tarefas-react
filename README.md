@@ -1,16 +1,34 @@
-# React + Vite
+# Lista de tarefas com login
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Atividade de Frameworks Frontend usando React, React Router, Vite e Bootstrap.
 
-Currently, two official plugins are available:
+## Como executar
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+```bash
+npm install
+npm run dev
+```
 
-## React Compiler
+Abra o endereço exibido no terminal.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Login de teste
 
-## Expanding the Oxlint configuration
+- E-mail: `aluno@exemplo.com`
+- Senha: `123456`
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+O formulário exige os dois campos e mostra uma mensagem quando as credenciais
+estão incorretas. Após entrar, o usuário é direcionado à lista de tarefas.
+As rotas `/tarefas` e `/tarefas/:id` exigem login, inclusive quando acessadas
+diretamente pela URL. O botão **Sair** encerra a sessão.
+
+O login é uma simulação para a atividade: as credenciais são verificadas no
+front-end, sem servidor ou banco de dados. A sessão é mantida no `sessionStorage`
+ao atualizar a página, até sair ou fechar a aba. As tarefas continuam em memória,
+como no código original, e são perdidas ao atualizar a página.
+
+## Verificações
+
+```bash
+npm run lint
+npm run build
+```
